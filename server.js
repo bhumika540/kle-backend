@@ -5,7 +5,8 @@ const cors = require("cors");
 
 const allowedOrigins=[
     "https://kle-frontend-mu.vercel.app/",
-    "https://vercel.com/bhumikas-projects-5ae9126a/kle-frontend/5qQU3q2YZmC89mpnnw8VAMJo6jfz"
+    "https://kle-frontend-git-main-bhumikas-projects-5ae9126a.vercel.app/",
+    "https://kle-frontend-5a3bbyey2-bhumikas-projects-5ae9126a.vercel.app/"
 ];
 
 const app = express();
