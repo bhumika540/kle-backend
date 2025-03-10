@@ -3,11 +3,27 @@ const express = require("express");
 const connectDB = require("./config/db");
 const cors = require("cors");
 
-
+const allowedOrigins=[
+    "https://kle-frontend-mu.vercel.app/",
+    "https://vercel.com/bhumikas-projects-5ae9126a/kle-frontend/5qQU3q2YZmC89mpnnw8VAMJo6jfz"
+];
 
 const app = express();
 app.use(express.json());
-app.use(cors())
+app.use(cors(
+        {
+            origin: function (origin, callback) {
+              if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+              } else {
+                callback(new Error("Not allowed by CORS"));
+              }
+            },
+            credentials: true, // Allows cookies and authentication headers if needed
+          }
+
+    
+))
 
 connectDB();
 
